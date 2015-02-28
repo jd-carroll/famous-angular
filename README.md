@@ -32,7 +32,7 @@ Using F/A, you can:
 ####Before you start, tools you will need:
 * Download and install [git](http://git-scm.com/downloads)
 * Download and install [nodeJS](http://nodejs.org/download/)
-* Install bower `npm install -g bower`git
+* Install bower `npm install -g bower`
 
 ####Inside of your app:
 * Run `bower install famous-angular`
@@ -76,4 +76,4 @@ See [CONTRIBUTING.md](https://github.com/Famous/famous-angular/blob/master/CONTR
 
 As mentioned above, please direct support questions to GitHub Issues so that community members can help answer questions as well as benefit from answers.
 
-For anything else, email zack@famo.us or tweet at @befamous and @zackaboo.  
+For anything else, email jordan@famo.us or tweet at @befamous.  

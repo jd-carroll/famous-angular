@@ -1,7 +1,7 @@
 {
   "name": "famous-angular",
   "description": "Bring structure to your Famo.us apps with the power of AngularJS. Famo.us/Angular integrates seamlessly with existing Angular and Famo.us apps.",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "license": "MPL v2.0",
   "homepage": "https://github.com/Famous/famous-angular",
   "repository": {
@@ -12,10 +12,10 @@
     "node": ">=0.8.0"
   },
   "scripts": {
-    "install": "bower install",
-    "postinstall": "git submodule update --init --recursive",
+    "postinstall": "bower install && git submodule update --init --recursive",
     "start": "gulp dev",
-    "test": "karma start --single-run"
+    "test": "karma start --single-run",
+    "mergeprep": "npm install && gulp build && gulp build-to-docs && karma start --single-run && gulp serve-examples"
   },
   "dependencies": {},
   "devDependencies": {
@@ -50,14 +50,15 @@
     "karma": "^0.12.19",
     "karma-chrome-launcher": "~0.1.3",
     "karma-cli": "0.0.4",
+    "karma-coverage": "~0.2.0",
     "karma-firefox-launcher": "~0.1.3",
     "karma-jasmine": "~0.2.1",
+    "karma-mocha-reporter": "^0.3.1",
     "karma-ng-html2js-preprocessor": "^0.1.0",
     "karma-ng-scenario": "^0.1.0",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-requirejs": "~0.2.1",
     "karma-spec-reporter": "0.0.13",
-    "karma-coverage": "~0.2.0",
     "lodash": "^2.4.1",
     "minimist": "0.0.8",
     "mkdirp": "^0.5.0",
@@ -66,5 +67,23 @@
     "semver": "^2.3.0",
     "streamqueue": "0.0.7",
     "winston": "^0.7.3"
+  },
+  "jspm": {
+    "directories": {
+      "lib": "dist"
+    },
+    "main": "famous-angular",
+    "dependencies": {
+      "famous": "^0.3.0",
+      "angular": "^1.2.0",
+      "css": "^0.1.0"
+    },
+    "shim": {
+      "famous-angular": {
+        "deps": [
+          "./famous-angular.css!"
+        ]
+      }
+    }
   }
 }
